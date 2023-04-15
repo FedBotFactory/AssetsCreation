@@ -7,7 +7,7 @@
   <this:CloseGLAccountError.in_BRE>
     <InArgument x:TypeArguments="x:String" />
   </this:CloseGLAccountError.in_BRE>
-  <sap:VirtualizedContainerService.HintSize>1150,1876.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,1850</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -41,7 +41,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -70,9 +70,10 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CloseGLAccountError" sap:VirtualizedContainerService.HintSize="454.6666666666667,1812" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence sap2010:Annotation.AnnotationText="Close ExpenseAccountError" DisplayName="CloseExpenseAccountError" sap:VirtualizedContainerService.HintSize="450,1785.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="blnGLAccountWindow" />
     </Sequence.Variables>
@@ -80,9 +81,10 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Cancel'" sap:VirtualizedContainerService.HintSize="412.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Cancel'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_35" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -94,7 +96,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="acea3dee-ec18-41f6-a0da-cd5c46990879" InformativeScreenshot="bdc086abc27255d8dafa970d4ea71608" Selector="[string.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='{0}' role='internal frame' /&gt;&lt;java name='Cancel ALT C' role='push button' /&gt;&quot;, in_GLAccountField)]">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="acea3dee-ec18-41f6-a0da-cd5c46990879" InformativeScreenshot="bdc086abc27255d8dafa970d4ea71608" Selector="[string.Format(&quot;&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='{0}' role='internal frame' /&gt;&lt;java name='Cancel ALT C' role='push button' /&gt;&quot;, in_GLAccountField)]">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -104,7 +106,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Cancel'" sap:VirtualizedContainerService.HintSize="412.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Cancel'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -116,19 +118,19 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea147717-e328-49bd-895a-56fa8a844429" InformativeScreenshot="feae9b6d7f463c57cadc2a94ba93ad28" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='DOL_Demo' role='internal frame' /&gt;&lt;java name='Cancel ALT C' role='push button' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea147717-e328-49bd-895a-56fa8a844429" InformativeScreenshot="feae9b6d7f463c57cadc2a94ba93ad28" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='DOL_Demo' role='internal frame' /&gt;&lt;java name='Cancel ALT C' role='push button' /&gt;" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:RetryScope DisplayName="Retry Scope - Retry Closing Window" sap:VirtualizedContainerService.HintSize="412.6666666666667,426" sap2010:WorkflowViewState.IdRef="RetryScope_14" NumberOfRetries="[CInt(in_Config(&quot;RetryNum_GLAccountError_F4Key&quot;).ToString)]" RetryInterval="[TimeSpan.FromSeconds(CInt(in_Config(&quot;RetryInterval_GLAccountError_F4Key&quot;).ToString))]">
+    <ui:RetryScope DisplayName="Retry Scope - Retry Closing Window" sap:VirtualizedContainerService.HintSize="388,426" sap2010:WorkflowViewState.IdRef="RetryScope_14" NumberOfRetries="[CInt(in_Config(&quot;RetryNum_GLAccountError_F4Key&quot;).ToString)]" RetryInterval="[TimeSpan.FromSeconds(CInt(in_Config(&quot;RetryInterval_GLAccountError_F4Key&quot;).ToString))]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Press f4 key at GL account" sap:VirtualizedContainerService.HintSize="334,156.66666666666666" sap2010:WorkflowViewState.IdRef="SendHotkey_17" Key="f4" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
             <ui:SendHotkey.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8a5bfc34-1480-4d55-9489-feca2a8a906b" InformativeScreenshot="cbcb6644086bf8f3788d401ec1d81960" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='GL Account RequiredList of Values' role='text' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8a5bfc34-1480-4d55-9489-feca2a8a906b" InformativeScreenshot="cbcb6644086bf8f3788d401ec1d81960" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='*Account RequiredList of Values' role='text' /&gt;" WaitForReady="INTERACTIVE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -141,7 +143,7 @@
         <ActivityFunc x:TypeArguments="x:Boolean">
           <ui:UiElementExists DisplayName="GL Account window displayed?" Exists="[blnGLAccountWindow]" sap:VirtualizedContainerService.HintSize="334,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_29">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b6f905ca-4395-4cb3-94cd-fc55fed5f491" InformativeScreenshot="e3ef055328ca6ec5ca3571e2b1225eb9" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='DOL_Demo' role='internal frame' /&gt;" WaitForReady="INTERACTIVE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b6f905ca-4395-4cb3-94cd-fc55fed5f491" InformativeScreenshot="e3ef055328ca6ec5ca3571e2b1225eb9" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='DOL_Demo' role='internal frame' /&gt;" WaitForReady="INTERACTIVE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -157,7 +159,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <If Condition="[blnGLAccountWindow]" DisplayName="If Error pop up appeared?" sap:VirtualizedContainerService.HintSize="412.6666666666667,390" sap2010:WorkflowViewState.IdRef="If_11">
+    <If Condition="[blnGLAccountWindow]" DisplayName="If Error pop up appeared?" sap:VirtualizedContainerService.HintSize="388,309.3333333333333" sap2010:WorkflowViewState.IdRef="If_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,7 +179,7 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca7e96bf-9a8d-4b3e-b5d6-66a4024a1bc4" InformativeScreenshot="a90c06d82e5c87dadf8dae51de32e551" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='DOL_Demo' role='internal frame' /&gt;&lt;java name='Cancel ALT C' role='push button' /&gt;">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca7e96bf-9a8d-4b3e-b5d6-66a4024a1bc4" InformativeScreenshot="a90c06d82e5c87dadf8dae51de32e551" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='DOL_Demo' role='internal frame' /&gt;&lt;java name='Cancel ALT C' role='push button' /&gt;">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>
@@ -189,7 +191,7 @@
         </ui:Click>
       </If.Then>
     </If>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click OK at Error pop up" sap:VirtualizedContainerService.HintSize="412.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click OK at Error pop up" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -201,7 +203,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f21fadcd-a6ab-4965-a6ba-80c726e75c1d" InformativeScreenshot="b553718d9476021ce26ebb62ef4951f8" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='Error APP-FND-01388: Cannot read value for profile option FND_INDICATOR_COLORS in routine &amp;amp;ROUTINE.' role='internal frame' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f21fadcd-a6ab-4965-a6ba-80c726e75c1d" InformativeScreenshot="b553718d9476021ce26ebb62ef4951f8" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='Error APP-FND-01388: Cannot read value for profile option FND_INDICATOR_COLORS in routine &amp;amp;ROUTINE.' role='internal frame' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -217,7 +219,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Click>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Yes'" sap:VirtualizedContainerService.HintSize="412.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Yes'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -229,7 +231,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4671bef3-6983-4757-ad5e-c04b58e864b4" InformativeScreenshot="a269cdba7722d5c3dd2f1499858c1fb4" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='Forms Close this form?' role='internal frame' /&gt;&lt;java name='Close this form?' role='option pane' /&gt;&lt;java name='Yes ALT Y' role='push button' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4671bef3-6983-4757-ad5e-c04b58e864b4" InformativeScreenshot="a269cdba7722d5c3dd2f1499858c1fb4" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='Forms Close this form?' role='internal frame' /&gt;&lt;java name='Close this form?' role='option pane' /&gt;&lt;java name='Yes ALT Y' role='push button' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -245,7 +247,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Click>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Open'" sap:VirtualizedContainerService.HintSize="412.6666666666667,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Open'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -273,6 +275,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Click>
-    <Throw DisplayName="GL Account Error" Exception="[New BusinessRuleException (in_BRE)]" sap:VirtualizedContainerService.HintSize="412.6666666666667,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+    <Throw DisplayName="GL Account Error" Exception="[New BusinessRuleException (in_BRE)]" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
   </Sequence>
 </Activity>

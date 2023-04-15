@@ -4,7 +4,7 @@
     <x:Property Name="io_dtMainData" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_strOutputFilePath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>560.6666666666666,2644</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,2644</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -107,7 +107,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Init - ValidateInputFile" sap:VirtualizedContainerService.HintSize="508.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_Config(&quot;Log_ValidateInputFile&quot;).ToString]" />
-    <ui:ReadRange AddHeaders="False" DataTable="[dt_ColumnNames]" DisplayName="Read Columns" sap:VirtualizedContainerService.HintSize="508.6666666666667,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="B17:B60" SheetName="Settings" WorkbookPath="Data\Config.xlsx" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_ColumnNames]" DisplayName="Read Columns" sap:VirtualizedContainerService.HintSize="508.6666666666667,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Columns" WorkbookPath="Data\Config.xlsx" />
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ColumnNames]" DisplayName="For each column name in Columns datatable" sap:VirtualizedContainerService.HintSize="508.6666666666667,1051.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
@@ -120,9 +120,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,96" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Row is: &quot;+ CurrentRow(0).ToString]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,96" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[io_dtMainData.Columns.Contains(CurrentRow(0).ToString)]" />
-            <If Condition="[io_dtMainData.Columns.Contains(CurrentRow(0).ToString)]" DisplayName="If Main data contains columns?" sap:VirtualizedContainerService.HintSize="410,548.6666666666666" sap2010:WorkflowViewState.IdRef="If_21">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,96" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Row is: &quot;+ CurrentRow(&quot;Columns&quot;).ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,96" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[io_dtMainData.Columns.Contains(CurrentRow(&quot;Columns&quot;).ToString)]" />
+            <If Condition="[io_dtMainData.Columns.Contains(CurrentRow(&quot;Columns&quot;).ToString)]" DisplayName="If Main data contains columns?" sap:VirtualizedContainerService.HintSize="410,548.6666666666666" sap2010:WorkflowViewState.IdRef="If_21">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_39">
                   <sap:WorkflowViewStateService.ViewState>

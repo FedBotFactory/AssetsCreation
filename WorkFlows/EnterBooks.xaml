@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562,7470</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,2186</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterBooks_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -87,7 +87,7 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EnterBooks" sap:VirtualizedContainerService.HintSize="572,7405.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Entering Books Details" DisplayName="EnterBooks" sap:VirtualizedContainerService.HintSize="450,2121.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strBook" />
       <Variable x:TypeArguments="x:Boolean" Name="blnBooksPanelDisplayed" />
@@ -105,9 +105,11 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Assign Books Variables" sap:VirtualizedContainerService.HintSize="510,376.6666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Entering Books" sap:VirtualizedContainerService.HintSize="388,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_Config(&quot;Log_EnterBookDetails&quot;).ToString]" />
+    <ui:MultipleAssign DisplayName="Assign Books Variables" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -192,8 +194,14 @@
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Book" sap:VirtualizedContainerService.HintSize="510,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[strBook+ &quot;[k(tab)]&quot;]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Book" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[strBook+ &quot;[k(tab)]&quot;]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="04173d98-f981-40f7-9839-24ff33f17a3a" InformativeScreenshot="584754989a7d90e165c8930f878635c7" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Book RequiredList of Values' role='text' /&gt;">
           <ui:Target.TimeoutMS>
@@ -205,7 +213,7 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <ui:UiElementExists DisplayName="Books Panel Displayed?" Exists="[blnBooksPanelDisplayed]" sap:VirtualizedContainerService.HintSize="510,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:UiElementExists DisplayName="Books Panel Displayed?" Exists="[blnBooksPanelDisplayed]" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="92dbee01-329a-4478-9a8e-878b9c196045" InformativeScreenshot="9e593c6a47c523ba0038d1d287e660e9" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java cls='EwtContainer' role='panel' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_BooksPanelDisplayed&quot;).ToString)]">
           <ui:Target.WaitForReady>
@@ -214,10 +222,10 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[blnBooksPanelDisplayed]" DisplayName="If Books Panel Displayed?" sap:VirtualizedContainerService.HintSize="510,1296.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[blnBooksPanelDisplayed]" DisplayName="If Books Panel Displayed?" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -373,7 +381,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Comments" sap:VirtualizedContainerService.HintSize="510,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[strCommentsBooks]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Comments" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[strCommentsBooks]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4ce2fd88-8131-42fb-91df-f16db01f3024" InformativeScreenshot="3128058de66b5dafba8ddfc556585be7" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Comments' role='text' /&gt;">
           <ui:Target.TimeoutMS>
@@ -385,7 +393,7 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Current Cost" sap:VirtualizedContainerService.HintSize="510,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="True" Text="[strCurrentCost+ &quot;[k(tab)]&quot;]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Current Cost" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="True" Text="[strCurrentCost+ &quot;[k(tab)]&quot;]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dcdd005c-5df7-45ca-b10d-0d7f03714602" InformativeScreenshot="b4e3d046268ce154c0647220acc69164" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Current Cost Required' role='text' /&gt;">
           <ui:Target.TimeoutMS>
@@ -397,10 +405,10 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <If Condition="[Not String.IsNullOrEmpty(strYTDDepreciation) = true OR  Not String.IsNullOrWhiteSpace(strYTDDepreciation) = true]" DisplayName="If YTD Depreciation Column value is not given" sap:VirtualizedContainerService.HintSize="510,456" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[Not String.IsNullOrEmpty(strYTDDepreciation) = true OR  Not String.IsNullOrWhiteSpace(strYTDDepreciation) = true]" DisplayName="If YTD Depreciation Column value is not given" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -435,10 +443,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Not String.IsNullOrEmpty(strAccumulatedDepreciation) or Not String.IsNullOrWhiteSpace(strAccumulatedDepreciation)]" DisplayName="If Accumulated Depreciation column value is not given" sap:VirtualizedContainerService.HintSize="510,456" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[Not String.IsNullOrEmpty(strAccumulatedDepreciation) or Not String.IsNullOrWhiteSpace(strAccumulatedDepreciation)]" DisplayName="If Accumulated Depreciation column value is not given" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -473,10 +481,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Not String.IsNullOrEmpty(strSalvageValueType) or Not String.IsNullOrWhiteSpace(strSalvageValueType)]" DisplayName="If Salvage Value Type Column value is not given" sap:VirtualizedContainerService.HintSize="510,456" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[Not String.IsNullOrEmpty(strSalvageValueType) or Not String.IsNullOrWhiteSpace(strSalvageValueType)]" DisplayName="If Salvage Value Type Column value is not given" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -517,10 +525,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Not String.IsNullOrEmpty(strSalvageValue) or Not String.IsNullOrWhiteSpace(strSalvageValue)]" DisplayName="If Salvage value column value is not given" sap:VirtualizedContainerService.HintSize="510,456" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[Not String.IsNullOrEmpty(strSalvageValue) or Not String.IsNullOrWhiteSpace(strSalvageValue)]" DisplayName="If Salvage value column value is not given" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -555,21 +563,21 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Not String.IsNullOrEmpty(strMethod) or Not String.IsNullOrWhiteSpace(strMethod)]" DisplayName="If Method column value is not given" sap:VirtualizedContainerService.HintSize="510,1940" sap2010:WorkflowViewState.IdRef="If_8">
+    <If Condition="[Not String.IsNullOrEmpty(strMethod) or Not String.IsNullOrWhiteSpace(strMethod)]" DisplayName="If Method column value is not given" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="452,1706.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,562" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Enter Method" sap:VirtualizedContainerService.HintSize="410,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="True" Text="[strMethod+ &quot;[k(tab)]&quot;]">
+          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Enter Method" sap:VirtualizedContainerService.HintSize="334,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="True" Text="[strMethod+ &quot;[k(tab)]&quot;]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc05e2b6-15d8-4aea-80c0-fc2f8f1e6c84" InformativeScreenshot="13ffd1b4861f1f420bf975da4e1bcfba" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Depreciation' role='page tab' /&gt;&lt;java name='Depreciation tab page Method RequiredList of Values' role='text' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -581,7 +589,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:UiElementExists DisplayName="Methods Panel displayed?" Exists="[blnMethodsPanelDispalyed]" sap:VirtualizedContainerService.HintSize="410,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+          <ui:UiElementExists DisplayName="Methods Panel displayed?" Exists="[blnMethodsPanelDispalyed]" sap:VirtualizedContainerService.HintSize="334,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="adb86de1-e5d5-4966-9d69-7bd2ea48d4a0" InformativeScreenshot="0625120268f0157c1a04bf0cb39d530b" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Methods' role='internal frame' /&gt;&lt;java cls='EwtContainer' role='panel' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_MethodsPanelDisplayed&quot;).ToString)]">
                 <ui:Target.WaitForReady>
@@ -590,7 +598,7 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[blnMethodsPanelDispalyed]" DisplayName="If Methods Panel Displayed" sap:VirtualizedContainerService.HintSize="410,1296.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[blnMethodsPanelDispalyed]" DisplayName="If Methods Panel Displayed" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -761,10 +769,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Not String.IsNullOrEmpty(strDateInService) or Not String.IsNullOrWhiteSpace(strDateInService)]" DisplayName="If Date in service Column value is not given" sap:VirtualizedContainerService.HintSize="510,581.3333333333334" sap2010:WorkflowViewState.IdRef="If_9">
+    <If Condition="[Not String.IsNullOrEmpty(strDateInService) or Not String.IsNullOrWhiteSpace(strDateInService)]" DisplayName="If Date in service Column value is not given" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -807,7 +815,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Prorate Convention" sap:VirtualizedContainerService.HintSize="510,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_9" SimulateType="True" Text="[strProrateConvention]">
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Prorate Convention" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_9" SimulateType="True" Text="[strProrateConvention]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1799c456-3a37-42e2-a8ed-e63ba15a8c56" InformativeScreenshot="94d1309786d457e625f567d4016432ca" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Books' role='internal frame' /&gt;&lt;java name='Depreciation' role='page tab' /&gt;&lt;java name='Prorate Convention RequiredList of Values' role='text' /&gt;">
           <ui:Target.TimeoutMS>
@@ -819,7 +827,7 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Continue" sap:VirtualizedContainerService.HintSize="510,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Continue" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -841,5 +849,6 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
+    <ui:LogMessage DisplayName="Log Enter Book Details Success" sap:VirtualizedContainerService.HintSize="388,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_Config(&quot;Log_EnterBookDetailsSuccess&quot;).ToString]" />
   </Sequence>
 </Activity>

@@ -3,7 +3,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Responsibility" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>854,1534</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,1152.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -73,7 +73,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Check for 'DOL Fixed Assets'&#xA;2. Responsibility is listed - 'Naviate to Invoices'" DisplayName="Navigate to Asset Workbench" sap:VirtualizedContainerService.HintSize="548.6666666666666,1469.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="1. Check for 'DOL Fixed Assets'&#xA;2. Responsibility is listed - 'Naviate to Asset Workbench'" DisplayName="Navigate to Asset Workbench" sap:VirtualizedContainerService.HintSize="546,1088" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -81,25 +81,14 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,286.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,206.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_7">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Navigate to Receipts" sap:VirtualizedContainerService.HintSize="388,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_Config(&quot;Log_NavigateToReceipts&quot;).ToString]" />
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach - Home Page" sap:VirtualizedContainerService.HintSize="486.6666666666667,660" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fa73521c764b76148497d5adcdb795fa" Selector="&lt;html app='msedge.exe' title='Home' /&gt;">
+    <ui:LogMessage DisplayName="Navigate to Asset Workbench" sap:VirtualizedContainerService.HintSize="484,96" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[in_Config(&quot;Log_NavigateToAssetWorkbench&quot;).ToString]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach - Home Page" sap:VirtualizedContainerService.HintSize="484,660" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fa73521c764b76148497d5adcdb795fa" Selector="&lt;html app='msedge.exe' title='Home' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fixed Assets Navigate to Workbench" sap:VirtualizedContainerService.HintSize="450,512.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Fixed Assets Navigate to Asset Workbench" sap:VirtualizedContainerService.HintSize="450,512.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,17 +163,6 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,286.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,206.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Success - NavigateToInvoices" sap:VirtualizedContainerService.HintSize="388,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[in_Config(&quot;Log_NavigateToReceiptsSuccess&quot;).ToString]" />
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Success - Navigate to Asset Workbench" sap:VirtualizedContainerService.HintSize="484,96" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[in_Config(&quot;Log_NavigateToAssetWorkbenchSuccess&quot;).ToString]" />
   </Sequence>
 </Activity>

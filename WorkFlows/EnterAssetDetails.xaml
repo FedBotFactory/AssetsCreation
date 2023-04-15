@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>486.66666666666674,9298</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,9966</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterAssetDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -108,9 +108,9 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EnterAssetDetails" sap:VirtualizedContainerService.HintSize="496.6666666666667,9233.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Entering Asset Details window fields" DisplayName="EnterAssetDetails" sap:VirtualizedContainerService.HintSize="496.66666666666674,7878" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="MARCH05_03" Name="strAssetNumber" />
+      <Variable x:TypeArguments="x:String" Name="strAssetNumber" />
       <Variable x:TypeArguments="x:Boolean" Name="blnAssetNumberError" />
       <Variable x:TypeArguments="x:String" Name="strDescription" />
       <Variable x:TypeArguments="x:String" Name="strTagNumber" />
@@ -131,9 +131,11 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Assign Asset Details Variables" sap:VirtualizedContainerService.HintSize="434.6666666666667,54" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log - Enter Asset Details" sap:VirtualizedContainerService.HintSize="434.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_Config(&quot;Log_EnterAssetDetails&quot;).ToString]" />
+    <ui:MultipleAssign DisplayName="Assign Asset Details Variables" sap:VirtualizedContainerService.HintSize="434.6666666666667,376.6666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -220,7 +222,7 @@
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -242,6 +244,33 @@
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Entering Asset Number field&quot;]" />
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" sap2010:Annotation.AnnotationText="Continue on Error enabled inorder to process next transaction&#xA;" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Additions" sap:VirtualizedContainerService.HintSize="434.6666666666667,169.33333333333334" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87a27853-3ff7-4c78-b927-72a484ac3245" InformativeScreenshot="a2b42e00ce81cd000964f6e12660d923" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assets' role='internal frame' /&gt;&lt;java name='Additions alt n' role='push button' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:Click>
     <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="434.6666666666667,314" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:01">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
@@ -272,10 +301,10 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[blnAssetNumberError]" DisplayName="If Asset Number already exists?" sap:VirtualizedContainerService.HintSize="434.6666666666667,1149.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[blnAssetNumberError]" DisplayName="If Asset Number already exists?" sap:VirtualizedContainerService.HintSize="434.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -442,10 +471,10 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[blnTagNumberError]" DisplayName="If Tag Number already exists?" sap:VirtualizedContainerService.HintSize="434.6666666666667,1149.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[blnTagNumberError]" DisplayName="If Tag Number already exists?" sap:VirtualizedContainerService.HintSize="434.6666666666667,54" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -951,7 +980,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[Not String.IsNullOrEmpty(strAssetType) or Not String.IsNullOrWhiteSpace(strAssetType)]" DisplayName="If Asset Type column value is not given" sap:VirtualizedContainerService.HintSize="434.6666666666667,455.3333333333333" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[Not String.IsNullOrEmpty(strAssetType) or Not String.IsNullOrWhiteSpace(strAssetType)]" DisplayName="If Asset Type column value is not given" sap:VirtualizedContainerService.HintSize="434.6666666666667,456" sap2010:WorkflowViewState.IdRef="If_5">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="400.6666666666667,222.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
@@ -1100,5 +1129,6 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
+    <ui:LogMessage DisplayName="Log - Enter Asset Details Success" sap:VirtualizedContainerService.HintSize="434.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[in_Config(&quot;Log_EnterAssetDetailsSuccess&quot;).ToString]" />
   </Sequence>
 </Activity>
