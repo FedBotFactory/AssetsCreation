@@ -87,7 +87,7 @@
   <Sequence sap2010:Annotation.AnnotationText="1. Handles all security warnings dynamically.&#xA;2. Loop will be exited when Oracle Workbench appears.&#xA;3. Closes Invoice Workbench after appearing." DisplayName="HandleSecurityWarnings" sap:VirtualizedContainerService.HintSize="1763.3333333333333,2103.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="blnExitLoop" />
-      <Variable x:TypeArguments="ui:UiElement" Name="ReceiptsDisplayed" />
+      <Variable x:TypeArguments="ui:UiElement" Name="FindAssetsDisplayed" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -228,7 +228,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleDoWhile>
-    <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Assets Window Displayed?" FoundElement="[ReceiptsDisplayed]" sap:VirtualizedContainerService.HintSize="1701.3333333333333,107.33333333333333" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+    <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Assets Window Displayed?" FoundElement="[FindAssetsDisplayed]" sap:VirtualizedContainerService.HintSize="1701.3333333333333,107.33333333333333" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
       <ui:WaitUiElementAppear.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d83a4f3d-6f6d-491f-a23a-6749bcc94717" InformativeScreenshot="8634c3bdf9f116d20625039c7afbfb91" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Find Assets' role='internal frame' /&gt;&lt;java name='Find Assets' role='label' /&gt;" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
@@ -237,7 +237,7 @@
         </ui:Target>
       </ui:WaitUiElementAppear.Target>
     </ui:WaitUiElementAppear>
-    <If Condition="[IsNothing(ReceiptsDisplayed)]" DisplayName="If Receipts window Not displayed" sap:VirtualizedContainerService.HintSize="1701.3333333333333,294" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[IsNothing(FindAssetsDisplayed)]" DisplayName="If FindAssets window Not displayed" sap:VirtualizedContainerService.HintSize="1701.3333333333333,294" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Throw DisplayName="Transactions Window Not Displayed" Exception="[New SystemException(in_Config(&quot;SE_ErrMsg_ReceiptsWindowNotDisplayed&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_4" />
       </If.Then>

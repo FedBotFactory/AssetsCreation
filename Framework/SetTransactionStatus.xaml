@@ -179,29 +179,16 @@
                 </ui:RemoveLogFields.Fields>
               </ui:RemoveLogFields>
             </Sequence>
+            <ui:LogMessage DisplayName="Log Success Update Bot Status" sap:VirtualizedContainerService.HintSize="450,96" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[in_Config(&quot;Log_SuccessUpdateBotStatus&quot;).ToString]" />
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WorkFlows\UpdateBotStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="WorkFlows\UpdateBotStatus.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">
-                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtMainData" />
-                </InArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotStatus_Success&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotComments_Success&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ColName_TagNumber&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumbers">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_ReferenceNumbers" />
-                </InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">[io_dtMainData]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">[in_Config("BotStatus_Success").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">[in_Config("BotComments_Success").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">[in_TransactionItem]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[in_Config("ColName_TagNumber").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumbers">[In_ReferenceNumbers]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <Assign DisplayName="Assign Success Transactions Count" sap:VirtualizedContainerService.HintSize="450,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
@@ -343,29 +330,16 @@
                     </ui:RemoveLogFields.Fields>
                   </ui:RemoveLogFields>
                 </Sequence>
+                <ui:LogMessage DisplayName="Log BRE Update Bot Status" sap:VirtualizedContainerService.HintSize="450,96" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[in_Config(&quot;Log_BREUpdateBotStatus&quot;).ToString]" />
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WorkFlows\UpdateBotStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="WorkFlows\UpdateBotStatus.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">
-                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtMainData" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotStatus_BRE&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BusinessException.Message" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ColName_TagNumber&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumbers">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_ReferenceNumbers" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">[io_dtMainData]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">[in_Config("BotStatus_BRE").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">[in_BusinessException.Message]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">[in_TransactionItem]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[in_Config("ColName_TagNumber").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumbers">[In_ReferenceNumbers]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <Assign DisplayName="Assign BRE count" sap:VirtualizedContainerService.HintSize="450,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
@@ -391,7 +365,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">550,647.666666666667 550,677.666666666667 520,677.666666666667 520,743</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="500.66666666666674,1960.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="500.66666666666674,2096.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
@@ -549,29 +523,16 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
+                <ui:LogMessage DisplayName="Log SE Update Bot Status" sap:VirtualizedContainerService.HintSize="438.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[in_Config(&quot;Log_SEUpdateBotStatus&quot;).ToString]" />
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WorkFlows\UpdateBotStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="WorkFlows\UpdateBotStatus.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">
-                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dtMainData" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotStatus_SE&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BotComments_SE&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ColName_TagNumber&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumbers">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_ReferenceNumbers" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtMainData">[io_dtMainData]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">[in_Config("BotStatus_SE").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_BotComments">[in_Config("BotComments_SE").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnValue">[in_TransactionItem]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColumnName">[in_Config("ColName_TagNumber").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumbers">[In_ReferenceNumbers]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>

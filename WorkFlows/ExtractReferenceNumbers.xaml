@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,1666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,1832.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractReferenceNumbers_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -79,15 +79,17 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractReferenceNumbers" sap:VirtualizedContainerService.HintSize="572,1601.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Extract Reference Numbers" DisplayName="ExtractReferenceNumbers" sap:VirtualizedContainerService.HintSize="572,1904" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="blnNotePopUp" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Extract Reference Numbers" sap:VirtualizedContainerService.HintSize="510,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_Config(&quot;Log_ExtractReferenceNumbers&quot;).ToString]" />
     <ui:UiElementExists DisplayName="Note pop up displayed?" Exists="[blnNotePopUp]" sap:VirtualizedContainerService.HintSize="510,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2febac51-5c2b-4b2c-b9aa-c76d4cbc37e5" InformativeScreenshot="f62cd2ba780d8616c11bdb4caef2d045" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java name='Assignments' role='internal frame' /&gt;&lt;java name='Note APP-OFA*' role='internal frame' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeOut_NotePopUpError&quot;).ToString)]">
@@ -205,5 +207,6 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log Extract Reference Numbers Success" sap:VirtualizedContainerService.HintSize="510,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[in_Config(&quot;Log_ExtractReferenceNumbersSuccess&quot;).ToString]" />
   </Sequence>
 </Activity>

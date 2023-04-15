@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,3466.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,2084.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterAssignmentsLocationFields_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -96,7 +96,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EnterAssignmentsLocationFields" sap:VirtualizedContainerService.HintSize="496,3402" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Enter Assignments Location Fields" DisplayName="EnterAssignmentsLocationFields" sap:VirtualizedContainerService.HintSize="496,2020" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFACILITY" />
       <Variable x:TypeArguments="x:String" Name="strSTREETADDRESS" />
@@ -112,8 +112,10 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Enter Assignments Location Fields" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_Config(&quot;Log_EnterAssignmentsLocationFields&quot;).ToString]" />
     <ui:MultipleAssign DisplayName="Assign Assignment Locaiton field variables" sap:VirtualizedContainerService.HintSize="434,284.6666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
@@ -234,10 +236,10 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[blnLocationFlexfieldDisplayed]" DisplayName="If Location Flexfield panel displayed?" sap:VirtualizedContainerService.HintSize="434,1738.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[blnLocationFlexfieldDisplayed]" DisplayName="If Location Flexfield panel displayed?" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -471,5 +473,6 @@
         </ui:Target>
       </ui:SendHotkey.Target>
     </ui:SendHotkey>
+    <ui:LogMessage DisplayName="Log Enter Assignments Location Fields Success" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_Config(&quot;Log_EnterAssignmentsLocationFieldsSuccess&quot;).ToString]" />
   </Sequence>
 </Activity>
