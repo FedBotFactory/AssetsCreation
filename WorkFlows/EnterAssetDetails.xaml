@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,9966</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854,7942.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterAssetDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -108,7 +108,7 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Entering Asset Details window fields" DisplayName="EnterAssetDetails" sap:VirtualizedContainerService.HintSize="496.66666666666674,7878" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Entering Asset Details window fields" DisplayName="EnterAssetDetails" sap:VirtualizedContainerService.HintSize="496.6666666666667,7878" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strAssetNumber" />
       <Variable x:TypeArguments="x:Boolean" Name="blnAssetNumberError" />
@@ -271,7 +271,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Click>
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="434.6666666666667,314" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:01">
+    <ui:RetryScope DisplayName="Retry Scope - Type Asset Number" sap:VirtualizedContainerService.HintSize="434.6666666666667,314" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[CInt(in_Config(&quot;RetryNum_TypeAssetNumber&quot;).ToString)]" RetryInterval="[TimeSpan.FromSeconds (CInt(in_Config(&quot;RetryInterval_TypeAssetNumber&quot;).ToString))]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Asset Number" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[strAssetNumber+ &quot;[k(tab)]&quot;]">
