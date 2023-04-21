@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>854,7942.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,7942.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterAssetDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -274,15 +274,12 @@
     <ui:RetryScope DisplayName="Retry Scope - Type Asset Number" sap:VirtualizedContainerService.HintSize="434.6666666666667,314" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[CInt(in_Config(&quot;RetryNum_TypeAssetNumber&quot;).ToString)]" RetryInterval="[TimeSpan.FromSeconds (CInt(in_Config(&quot;RetryInterval_TypeAssetNumber&quot;).ToString))]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Asset Number" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[strAssetNumber+ &quot;[k(tab)]&quot;]">
+          <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" ClickBeforeTyping="True" DisplayName="Type Asset Number" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[strAssetNumber+ &quot;[k(tab)]&quot;]">
             <ui:TypeInto.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="30a3c14d-bcc0-4855-b819-8cdaeabbf4e8" InformativeScreenshot="c91ce139d225af16d8559d69ff2b6d8f" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java role='internal frame' idx='*' /&gt;&lt;java name='Asset Number' role='text' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="30a3c14d-bcc0-4855-b819-8cdaeabbf4e8" InformativeScreenshot="c91ce139d225af16d8559d69ff2b6d8f" Selector="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - EBSDB' /&gt;&lt;java role='internal frame' idx='*' /&gt;&lt;java name='Asset Number' role='text' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>

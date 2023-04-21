@@ -192,7 +192,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="496,807.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Enter Expense Account and Location Fields" sap:VirtualizedContainerService.HintSize="496,807.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
